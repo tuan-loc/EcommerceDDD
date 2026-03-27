@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+  </Folder>
+  <Project Path="EcommerceDomainDrivenDesign.Application/EcommerceDomainDrivenDesign.Application.csproj" />
+  <Project Path="EcommerceDomainDrivenDesign.DataSeed/EcommerceDomainDrivenDesign.DataSeed.csproj" />
+  <Project Path="EcommerceDomainDrivenDesign.Domain.Core/EcommerceDomainDrivenDesign.Domain.Core.csproj" />
+  <Project Path="EcommerceDomainDrivenDesign.Domain/EcommerceDomainDrivenDesign.Domain.csproj" />
+  <Project Path="EcommerceDomainDrivenDesign.Infrastructure.IoC/EcommerceDomainDrivenDesign.Infrastructure.IoC.csproj" />
+  <Project Path="EcommerceDomainDrivenDesign.Infrastructure/EcommerceDomainDrivenDesign.Infrastructure.csproj" />
+  <Project Path="EcommerceDomainDrivenDesign.UnitTests/EcommerceDomainDrivenDesign.UnitTests.csproj" />
+  <Project Path="EcommerceDomainDrivenDesign.WebApp/EcommerceDomainDrivenDesign.WebApp/EcommerceDomainDrivenDesign.WebApp.csproj" />
+</Solution>
