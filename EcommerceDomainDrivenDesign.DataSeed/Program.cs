@@ -12,6 +12,7 @@ using EcommerceDomainDrivenDesign.Infrastructure.Domain;
 using Microsoft.EntityFrameworkCore;
 using EcommerceDomainDrivenDesign.Domain.CurrencyExchange;
 using EcommerceDomainDrivenDesign.Infrastructure.Domain.ForeignExchanges;
+using EcommerceDomainDrivenDesign.Infrastructure.Domain.CurrencyExchange;
 
 namespace EcommerceDomainDrivenDesign.DataSeed
 {
