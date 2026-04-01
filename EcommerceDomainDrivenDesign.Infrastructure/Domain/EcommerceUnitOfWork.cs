@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using EcommerceDomainDrivenDesign.Domain;
+﻿using EcommerceDomainDrivenDesign.Domain;
 using EcommerceDomainDrivenDesign.Domain.Core.Base;
 using EcommerceDomainDrivenDesign.Domain.Core.Messaging;
 using EcommerceDomainDrivenDesign.Domain.Customers;
+using EcommerceDomainDrivenDesign.Domain.Payments;
 using EcommerceDomainDrivenDesign.Domain.Products;
 using EcommerceDomainDrivenDesign.Infrastructure.Database.Context;
-using EcommerceDomainDrivenDesign.Infrastructure.Domain;
 using EcommerceDomainDrivenDesign.Infrastructure.Messaging;
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace EcommerceDomainDrivenDesign.Infrastructure.Domain
 {
@@ -20,6 +18,7 @@ namespace EcommerceDomainDrivenDesign.Infrastructure.Domain
         public ICustomerRepository CustomerRepository { get; }
         public IStoredEventRepository MessageRepository { get; }
         public IProductRepository ProductRepository { get; }
+        public IPaymentRepository PaymentRepository { get; }
 
         private readonly IEventSerializer _eventSerializer;
 
@@ -27,11 +26,13 @@ namespace EcommerceDomainDrivenDesign.Infrastructure.Domain
             ICustomerRepository customerRepository,
             IStoredEventRepository messageRepository,
             IProductRepository productRepository,
+            IPaymentRepository paymentRepository,
             IEventSerializer eventSerializer) : base(dbContext)
         {
             CustomerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
             MessageRepository = messageRepository ?? throw new ArgumentNullException(nameof(messageRepository));
             ProductRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
+            PaymentRepository = paymentRepository ?? throw new ArgumentNullException(nameof(paymentRepository));
 
             _eventSerializer = eventSerializer ?? throw new ArgumentNullException(nameof(eventSerializer));
         }
