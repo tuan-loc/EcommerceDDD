@@ -13,10 +13,11 @@ using Microsoft.EntityFrameworkCore;
 using EcommerceDomainDrivenDesign.Domain.CurrencyExchange;
 using EcommerceDomainDrivenDesign.Infrastructure.Domain.ForeignExchanges;
 using EcommerceDomainDrivenDesign.Infrastructure.Domain.CurrencyExchange;
+using EcommerceDomainDrivenDesign.Domain.Payments;
 
 namespace EcommerceDomainDrivenDesign.DataSeed
 {
-    class Program
+    class DataSeeder
     {
         private static IServiceProvider _serviceProvider;
 
@@ -39,6 +40,7 @@ namespace EcommerceDomainDrivenDesign.DataSeed
             services.AddScoped<IEcommerceUnitOfWork, EcommerceUnitOfWork>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<IStoredEventRepository, StoredEventRepository>();
             services.AddScoped<IEventSerializer, EventSerializer>();
             services.AddScoped<ICurrencyConverter, CurrencyConverter>();

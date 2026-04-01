@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -45,6 +45,10 @@
 	  <ProjectReference Include="..\..\EcommerceDomainDrivenDesign.Application\EcommerceDomainDrivenDesign.Application.csproj" />
 	  <ProjectReference Include="..\..\EcommerceDomainDrivenDesign.Domain.Core\EcommerceDomainDrivenDesign.Domain.Core.csproj" />
 	  <ProjectReference Include="..\..\EcommerceDomainDrivenDesign.Infrastructure.IoC\EcommerceDomainDrivenDesign.Infrastructure.IoC.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
 	</ItemGroup>
 
 </Project>

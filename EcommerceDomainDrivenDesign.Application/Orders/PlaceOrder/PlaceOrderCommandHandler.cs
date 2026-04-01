@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using EcommerceDomainDrivenDesign.Application.Base;
 
 namespace EcommerceDomainDrivenDesign.Application.Orders.PlaceOrder
 {
@@ -34,21 +35,20 @@ namespace EcommerceDomainDrivenDesign.Application.Orders.PlaceOrder
                 var productIds = command.Products.Select(p => p.Id).ToList();
                 List<Product> products = await _unitOfWork.ProductRepository.GetProductsByIds(productIds);
 
-                if (products.Count > 0)
+                if (products.Count == 0)
+                    throw new InvalidDataException("The given products are invalid.");
+
+                Basket basket = new Basket(command.Currency);
+                foreach (var product in products)
                 {
-                    Basket basket = new Basket(command.Currency);
-                    foreach (var product in products)
-                    {
-                        var quantity = command.Products.FirstOrDefault(p => p.Id == product.Id).Quantity;
-                        basket.AddProduct(product.Id, product.Price, quantity);
-                    }
+                    var quantity = command.Products.FirstOrDefault(p => p.Id == product.Id).Quantity;
+                    basket.AddProduct(product.Id, product.Price, quantity);
 
                     orderId = customer.PlaceOrder(basket, _currencyConverter);
 
                     await _unitOfWork.CustomerRepository.AddCustomerOrders(customer);
                     await _unitOfWork.CommitAsync();
                 }
-            }
 
             return orderId;
         }

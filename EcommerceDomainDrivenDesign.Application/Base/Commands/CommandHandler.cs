@@ -34,6 +34,10 @@ namespace EcommerceDomainDrivenDesign.Application.Base.Commands
             {
                 command.ValidationResult.Errors.Add(new ValidationFailure("Business rule error", e.Message));
             }
+            catch (InvalidDataException e)
+            {
+                command.ValidationResult.Errors.Add(new ValidationFailure("Invalid data error", e.Message));
+            }
 
             result.ValidationResult = command.ValidationResult;
             return result;
