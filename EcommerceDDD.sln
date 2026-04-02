@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30002.166
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11626.88 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{CC85A1EB-D55E-438E-8639-4D5DA5EB3CEC}"
 EndProject
@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceDDD.WebApi", "src\
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "EcommerceDDD.SPA", "src\EcommerceDDD.SPA\", "{ADDD1F59-75C2-4E18-B1A3-AA235284FADB}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_64250"
 		Debug.AspNetCompiler.PhysicalPath = "src\EcommerceDDD.SPA\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_64250\"
